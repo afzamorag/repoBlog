@@ -1,0 +1,24 @@
+<p>
+  <strong>Titulo:</strong>
+  <%= @articulo.title %>
+</p>
+
+<p>
+  <strong>Texto:</strong>
+  <%= @articulo.text %>
+</p>
+
+<h2>Comentarios</h2>
+<%= render @articulo.comentarios %>
+
+<h2>Agregar comentario:</h2>
+<%= render 'comentarios/form' %>
+
+<% if flash[:notice] %>
+<div class="notice"> <%= flash[:notice] %> </div>
+<% end %>
+<% if flash[:error] %>
+<div class="error"> <%= flash[:error] %> </div>
+<% end %>
+<%= link_to 'Editar', edit_articulo_path(@articulo) %> |
+<%= link_to 'REgresar', articulos_path %>
